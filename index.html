@@ -1091,15 +1091,23 @@ function removeSubdomain(url) {
 
 </script>
 <!-- end Simple Custom CSS and JS -->
-    <script type="text/javascript">
-        /* <![CDATA[ */
-        var aawp_geotargeting_url = "index.html\/\/ipinfo.io\/json\/";
-        var aawp_is_ipinfo = true;
-        var aawp_geotargeting_settings = {"store":"com","mode":"title"};
-        var aawp_geotargeting_localized_stores = {"ca":"ca","de":"de","at":"de","ch":"de","gb":"co.uk","ie":"co.uk"};
-        var aawp_geotargeting_tracking_ids = {"ca":"ptgdeals-20","de":"ptgdeals-21","co.uk":"ptgdeal-21"};
-        /* ]]> */
-    </script>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8e4cac7bcd718623","version":"2024.10.5","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"def840039b2b430d814246a4a2f75b0f","b":1}' crossorigin="anonymous"></script>
+<script>
+	let deferredPrompt;
+	window.addEventListener('beforeinstallprompt', event => {
+  		event.preventDefault();
+  		deferredPrompt = event;
+  		document.querySelector('#install-btn').style.display = 'block';
+
+  		document.querySelector('#install-btn').addEventListener('click', () => {
+    		deferredPrompt.prompt();
+    		deferredPrompt.userChoice.then(choice => {
+      			if (choice.outcome === 'accepted') {
+        		console.log('PWA installed');
+      		}
+      			deferredPrompt = null;
+    		});
+  		});
+	});
+</script>
 </body>
 </html>
