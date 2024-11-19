@@ -195,29 +195,6 @@ $('.elementor-tab-title').removeClass('elementor-active');
 #arlinablock ol{margin-left:20px}
 @media(max-width:768px){#arlinablock .inner{width:calc(100% - 20px);margin:10px auto;padding:15px}}
 </style>
-<!-- end Simple Custom CSS and JS -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16724580333">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-16724580333');
-</script><!-- start Simple Custom CSS and JS -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132436002-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-132436002-1');
-</script>
-
-<!-- end Simple Custom CSS and JS -->
-<!-- start Simple Custom CSS and JS -->
 <style>
 
 .rlp_custom .rlp_text span {
@@ -1062,6 +1039,17 @@ var kadenceSlideConfig = {"of":"of","to":"to","slide":"Slide","next":"Next","pre
 </script>
 <script src="wp-content/themes/kadence/assets/js/splide-init.min9030.js?ver=1.2.4" id="kadence-slide-init-js" async></script>
 <script type="text/javascript">var tcb_current_post_lists=JSON.parse('[]'); var tcb_post_lists=tcb_post_lists?[...tcb_post_lists,...tcb_current_post_lists]:tcb_current_post_lists;</script><!-- start Simple Custom CSS and JS -->
+<script>
+	// JavaScript logic here
+	const noAdsbtn = document.querySelector('#noAdsbtn');
+	if (noAdsbtn) {
+		noAdsbtn.addEventListener('click', () => {
+			console.log('No Ads button clicked!');
+		});
+	} else {
+		console.warn('noAdsbtn does not exist in the DOM.');
+	}
+</script>
 <script>
 let noAdsBtn = document.querySelector(".wpec-modal-open");
 
